@@ -10,6 +10,7 @@ class ManagerAssets {
   static const String outBoarding7 = 'assets/images/out_boarding/out_boarding7.jpeg';
   static const String outBoarding8 = 'assets/images/out_boarding/out_boarding8.jpeg';
   static const String outBoarding9 = 'assets/images/out_boarding/out_boarding9.png';
+  static const String outBoarding10 = 'assets/images/out_boarding/out_boarding10.jpeg';
 }
 
 class ManagerPaths {

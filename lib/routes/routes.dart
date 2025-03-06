@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../config/dependancy_injection.dart';
 import '../core/resources/manager_strings.dart';
+import '../features/auth/presentation/view/login_view.dart';
 import '../features/splash/presentaion/view/splash_screen.dart';
 
 class Routes {
@@ -24,9 +25,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SplashScreen());
       case Routes.outBoardingView:
         return MaterialPageRoute(builder: (_) =>  OutBoardingView());
-      // case Routes.loginView:
-      //   initAuth();
-      //   return MaterialPageRoute(builder: (_) => const LoginView());
+      case Routes.loginView:
+        return MaterialPageRoute(builder: (_) => const LoginView());
       // case Routes.registerView:
       //   initAuth();
       //   return MaterialPageRoute(builder: (_) => const RegisterView());
