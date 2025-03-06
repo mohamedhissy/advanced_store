@@ -6,6 +6,10 @@ class SplashController extends GetxController {
   AppSettingsSharedPreferences appSettingsSharedPreferences =
   AppSettingsSharedPreferences();
 
+  void toAuth(){
+    Get.offAllNamed(Routes.loginView);
+  }
+
   @override
   void onInit() {
     super.onInit();

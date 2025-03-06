@@ -11,4 +11,5 @@ class ManagerFontSizes {
   static const double s28 = 28;
   static const double s34 = 34;
   static const double s48 = 48;
+  static const double s50 = 50;
 }

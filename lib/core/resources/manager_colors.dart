@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ManagerColors {
-  static const Color primaryColor = Color(0xff79608);
+  static const Color primaryColor = Color(0xffFF73BF);
   static Color secondaryColor = Color(0xffB3069);
   static Color brown200 = Colors.brown.shade300;
   static Color transparent = Colors.transparent;
@@ -11,7 +11,7 @@ class ManagerColors {
   static Color black = Colors.black;
   static Color white70 = Colors.white70;
   static Color red = Colors.red;
-  static Color outBoardingTitleColor = const Color(0xff393939);
+  static Color outBoardingTitleColor = const Color(0xff817A7A);
   static const Color progressIndicatorColor = Color(0xffF5DF99);
   static const Color iconStar = Color(0xfffdc93a);
   static const Color button = Color(0xffF5DF99);
