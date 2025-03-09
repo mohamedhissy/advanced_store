@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../config/dependancy_injection.dart';
 import '../core/resources/manager_strings.dart';
 import '../features/auth/presentation/view/login_view.dart';
+import '../features/auth/presentation/view/register_view.dart';
+import '../features/home/presentation/view/home_view.dart';
 import '../features/splash/presentaion/view/splash_screen.dart';
 
 class Routes {
@@ -26,13 +28,14 @@ class RouteGenerator {
       case Routes.outBoardingView:
         return MaterialPageRoute(builder: (_) =>  OutBoardingView());
       case Routes.loginView:
+        initAuth();
         return MaterialPageRoute(builder: (_) => const LoginView());
-      // case Routes.registerView:
-      //   initAuth();
-      //   return MaterialPageRoute(builder: (_) => const RegisterView());
-      // case Routes.homeView:
-      //   initHome();
-      //   return MaterialPageRoute(builder: (_) => const HomeView());
+      case Routes.registerView:
+        initAuth();
+        return MaterialPageRoute(builder: (_) =>  RegisterView());
+      case Routes.homeView:
+        initHome();
+        return MaterialPageRoute(builder: (_) => const HomeView());
       // case Routes.profileView:
       //   initHome();
       //   return MaterialPageRoute(builder: (_) =>  ProfileView());

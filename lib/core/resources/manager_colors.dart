@@ -19,9 +19,11 @@ class ManagerColors {
   static const Color color = Color(0xffD9D9D9);
   static const Color iconDetails = Color(0xffa2a2a2);
   static const Color subStringLlogin = Color(0xffB5B5B5);
-  static const Color bgColorTextField = Color(0xffF9FFF6);
+  static const Color bgColorTextField = Color(0xffEDF8FF);
   static const Color bgColorTextFieldString = Color(0xffB5B5B5);
   static const Color homeColor1 = Color(0xff4B8673);
   static const Color homeColor2 = Color(0xffFFFFFF66);
+  static const Color loginButton = Color(0xffC1E4FD);
+  static const Color homeSearchPink = Color(0xfff5c1e8);
 
 }
