@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 
 class ManagerColors {
   static const Color primaryColor = Color(0xffFF73BF);
-  static Color secondaryColor = Color(0xffB3069);
+  static Color secondaryColor = Color(0xff2196F3FF);
   static Color brown200 = Colors.brown.shade300;
   static Color transparent = Colors.transparent;
+  static Color blue = Colors.blue;
   static Color white = Colors.white;
   static Color black = Colors.black;
   static Color white70 = Colors.white70;
   static Color red = Colors.red;
+  static Color green = Colors.green;
   static Color outBoardingTitleColor = const Color(0xff817A7A);
   static const Color progressIndicatorColor = Color(0xffF5DF99);
   static const Color iconStar = Color(0xfffdc93a);
@@ -25,5 +27,9 @@ class ManagerColors {
   static const Color homeColor2 = Color(0xffFFFFFF66);
   static const Color loginButton = Color(0xffC1E4FD);
   static const Color homeSearchPink = Color(0xfff5c1e8);
-
+  static const Color homeSearchblue = Color(0xffbdd8f6);
+  static const Color homeContainer = Color(0xff6609FE);
+  static const Color editColor = Color(0xff787B7D);
+  static Color greensh =Color(0xffA3C6A6) ;
+  static Color middle =Color(0xffCFC8D9) ;
 }

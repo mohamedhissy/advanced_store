@@ -18,6 +18,9 @@ class Constants {
   static const String notificationChannelDescription =
       'This channel will receive notifications specific to the app';
   static const String notificationIconName = 'launch_background';
+  static const String name = 'name';
+  static const String image = 'image';
+  static const String price = 'price';
 }
 
 class KeyConstants {

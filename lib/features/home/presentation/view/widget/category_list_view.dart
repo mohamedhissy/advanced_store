@@ -50,3 +50,4 @@ class CategoryItem {
 
   CategoryItem(this.label, this.iconPath, this.color);
 }
+

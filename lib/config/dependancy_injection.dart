@@ -1,3 +1,5 @@
+import 'package:advanced_store/features/profile/presentation/controller/profile_controller.dart';
+import 'package:advanced_store/features/settings/presentation/controller/stting_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../core/storage/local/database/shared_preferences/app_settings_shared_preferences.dart';
@@ -36,15 +38,23 @@ initHome() {
 disposeHome() {
 
 }
-//
-// initSetting() {
-//   disposeSplash();
-//   Get.put<LocaleNotifierController>(LocaleNotifierController());
-//   Get.put<ThemeController>(ThemeController());
-// }
-//
-// disposeSetting() {
-// }
+
+initProfile() {
+  Get.put<ProfileController>(ProfileController());
+}
+
+disposeProfile() {
+  Get.delete<ProfileController>();
+}
+
+
+initSetting() {
+  disposeSplash();
+  Get.put<SettingController>(SettingController());
+}
+
+disposeSetting() {
+}
 
 
 

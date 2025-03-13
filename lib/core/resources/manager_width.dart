@@ -7,12 +7,14 @@ class ManagerWidth {
   static const double w10 = 10;
   static const double w12 = 12;
   static const double w14 = 14;
+  static const double w15 = 15;
   static const double w16 = 16;
   static const double w17 = 17;
   static const double w20 = 20;
   static const double w21 = 21;
   static const double w22 = 22;
   static const double w24 = 24;
+  static const double w25 = 25;
   static const double w28 = 28;
   static const double w30 = 30;
   static const double w35 = 35;
@@ -67,4 +69,5 @@ class ManagerWidth {
   static const double w417 = 417;
   static const double w427 = 427;
   static const double w470 = 470;
+  static const double w430 = 430;
 }

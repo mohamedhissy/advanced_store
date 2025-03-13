@@ -110,6 +110,7 @@ class LoginView extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(20),
                     child: TextField(
+                      controller: controller.emailTextEditingController,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
@@ -161,6 +162,7 @@ class LoginView extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(20),
                     child: TextField(
+                      controller: controller.passwordTextEditingController,
                       obscureText: controller.showPassword,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
@@ -246,7 +248,7 @@ class LoginView extends StatelessWidget {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, Routes.homeView);
+                      controller.preformLogin(context);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: ManagerColors.transparent,

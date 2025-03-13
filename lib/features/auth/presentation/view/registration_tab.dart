@@ -272,281 +272,338 @@ class RegistrationForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<AuthController>(builder: (controller) {
-      return Container(
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
-                  child: Container(
-                    child: Text(
-                      ManagerStrings.name,
-                      style: TextStyle(
-                        fontSize: ManagerFontSizes.s20,
-                        fontWeight: ManagerFontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide(
-                        color: ManagerColors.bgColorTextField,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: ManagerStrings.enterName,
-                    hintStyle:
-                        TextStyle(color: ManagerColors.bgColorTextFieldString),
-                    // labelText: ManagerStrings.enterName,
-                    // labelStyle: TextStyle(
-                    //   color: ManagerColors.bgColorTextFieldString,
-                    // ),
-                    filled: true,
-                    fillColor: ManagerColors.bgColorTextField,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: ManagerHeight.h10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
-                  child: Text(
-                    isEmailTab
-                        ? ManagerStrings.email
-                        : ManagerStrings.phoneNumber,
-                    style: TextStyle(
-                      fontSize: ManagerFontSizes.s20,
-                      fontWeight: ManagerFontWeight.w600,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide(
-                        color: ManagerColors.bgColorTextField,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: isEmailTab
-                        ? ManagerStrings.enterEmail
-                        : ManagerStrings.enterPhoneNumber,
-                    hintStyle:
-                        TextStyle(color: ManagerColors.bgColorTextFieldString),
-                    // labelText: isEmailTab
-                    //     ? ManagerStrings.enterEmail
-                    //     : ManagerStrings.enterPhoneNumber,
-                    // labelStyle: TextStyle(color: ManagerColors.bgColorTextFieldString),
-                    filled: true,
-                    fillColor: ManagerColors.bgColorTextField,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: ManagerHeight.h10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
-                  child: Container(
-                    child: Text(
-                      ManagerStrings.password,
-                      style: TextStyle(
-                        fontSize: ManagerFontSizes.s20,
-                        fontWeight: ManagerFontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  obscureText: controller.showPassword,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide(
-                        color: ManagerColors.bgColorTextField,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: ManagerStrings.enterPassword,
-                    hintStyle:
-                        TextStyle(color: ManagerColors.bgColorTextFieldString),
-                    // labelText: ManagerStrings.enterPassword,
-                    // labelStyle: TextStyle(
-                    //   color: ManagerColors.bgColorTextFieldString,
-                    // ),
-                    suffixIcon: IconButton(
-                        onPressed: () => controller.changePasswordVisibility(),
-                        icon: controller.showPassword
-                            ? Icon(Icons.visibility_off)
-                            : Icon(
-                                Icons.visibility,
-                                color: ManagerColors.primaryColor,
-                              )),
-                    suffixIconColor: ManagerColors.color,
-                    filled: true,
-                    fillColor: ManagerColors.bgColorTextField,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: ManagerHeight.h10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
-                  child: Container(
-                    child: Text(
-                      ManagerStrings.confirmPassword,
-                      style: TextStyle(
-                        fontSize: ManagerFontSizes.s20,
-                        fontWeight: ManagerFontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: TextField(
-                  obscureText: controller.showConfirmPassword,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide(
-                        color: ManagerColors.bgColorTextField,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius:
-                          BorderRadius.all(Radius.circular(ManagerRadius.r10)),
-                      borderSide: BorderSide.none,
-                    ),
-                    hintText: ManagerStrings.enterConfirmPassword,
-                    hintStyle:
-                        TextStyle(color: ManagerColors.bgColorTextFieldString),
-                    // labelText: ManagerStrings.enterConfirmPassword,
-                    // labelStyle: TextStyle(
-                    //   color: ManagerColors.bgColorTextFieldString,
-                    // ),
-                    suffixIcon: IconButton(
-                        onPressed: () => controller.changeConfirmPasswordVisibility(),
-                        icon: controller.showConfirmPassword
-                            ? Icon(Icons.visibility_off)
-                            : Icon(
-                                Icons.visibility,
-                                color: ManagerColors.primaryColor,
-                              )),
-                    suffixIconColor: ManagerColors.color,
-                    filled: true,
-                    fillColor: ManagerColors.bgColorTextField,
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
-                  child: GestureDetector(
-                    // Use GestureDetector for better control
-                    onTap: () {
-                      // final controller = Get.find<AuthController>(); // Ensure controller is found
-                      controller.changeCheckBoxValue(); // Toggle checkbox value
-                    },
+      return SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
                     child: Container(
-                      width: ManagerWidth.w22,
-                      height: ManagerHeight.h22,
-                      decoration: BoxDecoration(
-                        color: controller.checkboxValue
-                            ? ManagerColors.primaryColor
-                            : ManagerColors.white,
-                        border: Border.all(
+                      child: Text(
+                        ManagerStrings.name,
+                        style: TextStyle(
+                          fontSize: ManagerFontSizes.s20,
+                          fontWeight: ManagerFontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextField(
+                    controller: controller.userNameTextEditingController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide(
+                          color: ManagerColors.bgColorTextField,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide.none,
+                      ),
+                      hintText: ManagerStrings.enterName,
+                      hintStyle:
+                          TextStyle(color: ManagerColors.bgColorTextFieldString),
+                      // labelText: ManagerStrings.enterName,
+                      // labelStyle: TextStyle(
+                      //   color: ManagerColors.bgColorTextFieldString,
+                      // ),
+                      filled: true,
+                      fillColor: ManagerColors.bgColorTextField,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: ManagerHeight.h10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
+                    child: Text(
+                      isEmailTab
+                          ? ManagerStrings.email
+                          : ManagerStrings.phoneNumber,
+                      style: TextStyle(
+                        fontSize: ManagerFontSizes.s20,
+                        fontWeight: ManagerFontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextField(
+                    controller: controller.emailTextEditingController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide(
+                          color: ManagerColors.bgColorTextField,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide.none,
+                      ),
+                      hintText: isEmailTab
+                          ? ManagerStrings.enterEmail
+                          : ManagerStrings.enterPhoneNumber,
+                      hintStyle:
+                          TextStyle(color: ManagerColors.bgColorTextFieldString),
+                      // labelText: isEmailTab
+                      //     ? ManagerStrings.enterEmail
+                      //     : ManagerStrings.enterPhoneNumber,
+                      // labelStyle: TextStyle(color: ManagerColors.bgColorTextFieldString),
+                      filled: true,
+                      fillColor: ManagerColors.bgColorTextField,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: ManagerHeight.h10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
+                    child: Container(
+                      child: Text(
+                        ManagerStrings.password,
+                        style: TextStyle(
+                          fontSize: ManagerFontSizes.s20,
+                          fontWeight: ManagerFontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextField(
+                    controller: controller.passwordTextEditingController,
+                    obscureText: controller.showPassword,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide(
+                          color: ManagerColors.bgColorTextField,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide.none,
+                      ),
+                      hintText: ManagerStrings.enterPassword,
+                      hintStyle:
+                          TextStyle(color: ManagerColors.bgColorTextFieldString),
+                      // labelText: ManagerStrings.enterPassword,
+                      // labelStyle: TextStyle(
+                      //   color: ManagerColors.bgColorTextFieldString,
+                      // ),
+                      suffixIcon: IconButton(
+                          onPressed: () => controller.changePasswordVisibility(),
+                          icon: controller.showPassword
+                              ? Icon(Icons.visibility_off)
+                              : Icon(
+                                  Icons.visibility,
+                                  color: ManagerColors.primaryColor,
+                                )),
+                      suffixIconColor: ManagerColors.color,
+                      filled: true,
+                      fillColor: ManagerColors.bgColorTextField,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: ManagerHeight.h10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
+                    child: Container(
+                      child: Text(
+                        ManagerStrings.confirmPassword,
+                        style: TextStyle(
+                          fontSize: ManagerFontSizes.s20,
+                          fontWeight: ManagerFontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextField(
+                    controller: controller.confirmPasswordTextEditingController,
+                    obscureText: controller.showConfirmPassword,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide(
+                          color: ManagerColors.bgColorTextField,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius:
+                            BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide.none,
+                      ),
+                      hintText: ManagerStrings.enterConfirmPassword,
+                      hintStyle:
+                          TextStyle(color: ManagerColors.bgColorTextFieldString),
+                      // labelText: ManagerStrings.enterConfirmPassword,
+                      // labelStyle: TextStyle(
+                      //   color: ManagerColors.bgColorTextFieldString,
+                      // ),
+                      suffixIcon: IconButton(
+                          onPressed: () => controller.changeConfirmPasswordVisibility(),
+                          icon: controller.showConfirmPassword
+                              ? Icon(Icons.visibility_off)
+                              : Icon(
+                                  Icons.visibility,
+                                  color: ManagerColors.primaryColor,
+                                )),
+                      suffixIconColor: ManagerColors.color,
+                      filled: true,
+                      fillColor: ManagerColors.bgColorTextField,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: ManagerHeight.h10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
+                    child: Container(
+                      child: Text(
+                        ManagerStrings.phoneNumber,
+                        style: TextStyle(
+                          fontSize: ManagerFontSizes.s20,
+                          fontWeight: ManagerFontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: TextField(
+                    controller: controller.phoneTextEditingController,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius:
+                        BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide(
+                          color: ManagerColors.bgColorTextField,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius:
+                        BorderRadius.all(Radius.circular(ManagerRadius.r10)),
+                        borderSide: BorderSide.none,
+                      ),
+                      hintText: ManagerStrings.enterConfirmPassword,
+                      hintStyle:
+                      TextStyle(color: ManagerColors.bgColorTextFieldString),
+                      // labelText: ManagerStrings.enterConfirmPassword,
+                      // labelStyle: TextStyle(
+                      //   color: ManagerColors.bgColorTextFieldString,
+                      // ),
+                      filled: true,
+                      fillColor: ManagerColors.bgColorTextField,
+                    ),
+                  ),
+                ),
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: ManagerWidth.w20),
+                    child: GestureDetector(
+                      // Use GestureDetector for better control
+                      onTap: () {
+                        // final controller = Get.find<AuthController>(); // Ensure controller is found
+                        controller.changeCheckBoxValue(); // Toggle checkbox value
+                      },
+                      child: Container(
+                        width: ManagerWidth.w22,
+                        height: ManagerHeight.h22,
+                        decoration: BoxDecoration(
                           color: controller.checkboxValue
                               ? ManagerColors.primaryColor
-                              : ManagerColors.primaryColor,
-                          width: ManagerWidth.w2,
+                              : ManagerColors.white,
+                          border: Border.all(
+                            color: controller.checkboxValue
+                                ? ManagerColors.primaryColor
+                                : ManagerColors.primaryColor,
+                            width: ManagerWidth.w2,
+                          ),
+                          borderRadius: BorderRadius.circular(ManagerRadius.r8),
                         ),
-                        borderRadius: BorderRadius.circular(ManagerRadius.r8),
                       ),
                     ),
                   ),
-                ),
-                // SizedBox(
-                //   width: ManagerWidth.w8,
-                // ),
-                Text(ManagerStrings.iAgreeOn),
-                SizedBox(
-                  width: ManagerWidth.w4,
-                ),
-                Text(
-                  ManagerStrings.termsOfUse,
-                  style: TextStyle(color: Colors.green),
-                ),
-                SizedBox(
-                  width: ManagerWidth.w4,
-                ),
-                Text(ManagerStrings.and),
-                SizedBox(
-                  width: ManagerWidth.w4,
-                ),
-                Text(
-                  ManagerStrings.conditions,
-                  style: TextStyle(color: Colors.green),
-                ),
-              ],
-            ),
-          ],
+                  // SizedBox(
+                  //   width: ManagerWidth.w8,
+                  // ),
+                  Text(ManagerStrings.iAgreeOn),
+                  SizedBox(
+                    width: ManagerWidth.w4,
+                  ),
+                  Text(
+                    ManagerStrings.termsOfUse,
+                    style: TextStyle(color: Colors.green),
+                  ),
+                  SizedBox(
+                    width: ManagerWidth.w4,
+                  ),
+                  Text(ManagerStrings.and),
+                  SizedBox(
+                    width: ManagerWidth.w4,
+                  ),
+                  Text(
+                    ManagerStrings.conditions,
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       );
     });
