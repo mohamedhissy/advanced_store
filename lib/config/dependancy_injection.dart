@@ -1,3 +1,4 @@
+import 'package:advanced_store/features/details/presentation/controller/view_details_controller.dart';
 import 'package:advanced_store/features/profile/presentation/controller/profile_controller.dart';
 import 'package:advanced_store/features/settings/presentation/controller/stting_controller.dart';
 import 'package:flutter/material.dart';
@@ -56,6 +57,15 @@ initSetting() {
 disposeSetting() {
 }
 
+initDetailse() {
+  Get.put<DetailseController>(DetailseController());
+  disposeSplash();
+  disposeAuth();
+}
+
+disposeDetailse() {
+
+}
 
 
 

@@ -52,8 +52,7 @@ class ApiRequest {
   static const String register = '$apiAuth/signup';
   static const String categories = '$api/categories';
   static const String home = '$api/products/home';
-  static const String productDetails = '$api/products/{${ApiConstants.id}}';
-}
+  static String productDetails(int id) => "$api/products/$id";}
 
 
 class ApiConstants {

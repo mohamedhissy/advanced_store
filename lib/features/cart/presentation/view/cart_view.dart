@@ -21,7 +21,7 @@ class CartView extends StatelessWidget {
 
     return GetBuilder<CartController>(builder: (controller) {
       return Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,

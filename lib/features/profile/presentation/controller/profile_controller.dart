@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:get/get_rx/get_rx.dart';
 import '../../../../core/storage/local/database/shared_preferences/app_settings_shared_preferences.dart';
 import '../../../../routes/routes.dart';
-import '../../../settings/presentation/controller/stting_controller.dart';
 
 class ProfileController extends GetxController {
   AppSettingsSharedPreferences appSettingsSharedPreferences =
@@ -12,13 +11,6 @@ class ProfileController extends GetxController {
 
 
   var pageSelectedIndex = 0.obs;
-
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  //   profileImage.value = Get.find<SettingController>().selectedProfileImage.value;
-  // }
-
 
 
   void showEditDialog(BuildContext context) {
@@ -75,10 +67,5 @@ class ProfileController extends GetxController {
     isArrowForward.value = true; // Reset icon after selection
   }
 
-  // var profileImage = "".obs; // Will be updated from settings
-  //
-  // void updateProfileImage(String imagePath) {
-  //   profileImage.value = imagePath;
-  // }
 
 }

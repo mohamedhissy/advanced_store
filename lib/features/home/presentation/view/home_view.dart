@@ -1,8 +1,8 @@
 import 'package:advanced_store/core/resources/manager_raduis.dart';
+import 'package:advanced_store/features/details/presentation/controller/view_details_controller.dart';
 import 'package:advanced_store/features/home/presentation/view/widget/category_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../core/resources/manager_assets.dart';
 import '../../../../core/resources/manager_colors.dart';
 import '../../../../core/resources/manager_font_sizes.dart';
@@ -10,6 +10,7 @@ import '../../../../core/resources/manager_font_weight.dart';
 import '../../../../core/resources/manager_height.dart';
 import '../../../../core/resources/manager_strings.dart';
 import '../../../../core/resources/manager_width.dart';
+import '../../../settings/presentation/controller/stting_controller.dart';
 import '../controller/home_controller.dart';
 
 class HomeView extends StatelessWidget {
@@ -18,6 +19,9 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(builder: (controller) {
+      final SettingController settingController = Get.put(SettingController());
+      final DetailseController detailseController = Get.put(DetailseController());
+
       return DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -36,9 +40,14 @@ class HomeView extends StatelessWidget {
                       width: 42,
                       height: 42,
                       child: CircleAvatar(
-                        backgroundImage: AssetImage(ManagerAssets.home22),
+                        backgroundImage: AssetImage(
+                          settingController.selectedGender.value == ManagerStrings.male
+                              ? ManagerAssets.profile1  // Image for Male
+                              : ManagerAssets.profile2,  // Image for Female
+                        ),
                       ),
                     ),
+                    SizedBox(width: ManagerWidth.w10,),
                     Text(
                       controller.appSettingsSharedPreferences.userName,
                       style: TextStyle(color: Colors.black),
@@ -53,7 +62,9 @@ class HomeView extends StatelessWidget {
                   height: ManagerHeight.h40,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(ManagerAssets.home1),
+                      image: AssetImage(
+                          ManagerAssets.home1
+                      ),
                       fit: BoxFit
                           .contain, // Ensures the image is properly displayed
                     ),
@@ -177,17 +188,17 @@ class HomeView extends StatelessWidget {
                     children: [
                       CategoryListView(categories: [
                         CategoryItem(ManagerStrings.clothes,
-                            ManagerAssets.home7, Colors.blue),
-                        CategoryItem(ManagerStrings.bags, ManagerAssets.home8,
+                            ManagerAssets.home9, Colors.blue),
+                        CategoryItem(ManagerStrings.bags, ManagerAssets.home10,
                             Colors.blue),
-                        CategoryItem(ManagerStrings.shoes, ManagerAssets.home9,
+                        CategoryItem(ManagerStrings.shoes, ManagerAssets.home11,
                             Colors.blue),
                         CategoryItem(ManagerStrings.accessory,
-                            ManagerAssets.home10, Colors.blue),
-                        CategoryItem(ManagerStrings.brand, ManagerAssets.home11,
+                            ManagerAssets.home12, Colors.blue),
+                        CategoryItem(ManagerStrings.brand, ManagerAssets.home13,
                             Colors.blue),
                         CategoryItem(ManagerStrings.clothes,
-                            ManagerAssets.home7, Colors.blue),
+                            ManagerAssets.home14, Colors.blue),
                       ]),
 
                       // Women's Category (نساء)
@@ -374,12 +385,7 @@ class HomeView extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
-                            controller.productDetails(
-                                context,
-                                controller.homeModel.data[index].id,
-                                controller.homeModel.data[index].thumbnailImage,
-                                controller.homeModel.data[index].name,
-                                controller.homeModel.data[index].basePrice);
+                            detailseController.readDetailse(controller.homeModel.data[index].id,context);
                           },
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 5),

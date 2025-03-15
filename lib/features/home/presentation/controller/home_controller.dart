@@ -14,7 +14,7 @@ class HomeController extends GetxController {
   HomeApiController homeApiController = HomeApiController();
 
   var isMale = true.obs;
-  var pageSelectedIndex = 0.obs;
+  var pageSelectedIndex = 2.obs;
   var currentPageIndex = 0.obs;
   // double visibleLetters = 20;
 
